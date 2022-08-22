@@ -1,0 +1,10 @@
+{
+    "extension_name": {
+        "message": "OpenTwitter",
+        "description": "The display name for the extension."
+    },
+    "extension_description": {
+        "message": "Displays an Open in Twitter alert for sideloaded TW",
+        "description": "Description of what the extension does."
+    }
+}
