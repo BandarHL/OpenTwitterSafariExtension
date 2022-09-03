@@ -8,12 +8,17 @@ browser.runtime.onMessage.addListener((request, sender, sendResponse) => {
 
 function afterNavigate() {
     var locationArr = window.location.pathname.split("/").reverse()
-    if (locationArr.includes("status")) { // tweet
-        var tw = `twitter://status?id=${locationArr[0]}`
+    if (locationArr[0] && !locationArr[1]) {
+        var tw;
+        if (locationArr[0] === "home") {
+            tw = `twitter://timeline`
+        } else {
+            tw = `twitter://user?screen_name=${locationArr[0]}`
+        }
         window.location.href = tw
         console.log(tw)
-    } else if (locationArr.includes("home")) { // twitter home
-        var tw = `twitter://timeline`
+    } else if (locationArr[0] && locationArr[1] === "status") { // tweet
+        var tw = `twitter://status?id=${locationArr[0]}`
         window.location.href = tw
         console.log(tw)
     }
