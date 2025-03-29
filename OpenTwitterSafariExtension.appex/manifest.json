@@ -22,7 +22,8 @@
     "content_scripts": [{
         "js": [ "content.js" ],
         "matches": [
-            "*://*.twitter.com/*"
+            "*://*.twitter.com/*",
+            "*://*.x.com/*"
         ]
     }],
 
